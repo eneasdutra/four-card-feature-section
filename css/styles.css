@@ -119,13 +119,18 @@ body {
         font-size: 2.25rem;
     }
     .cards-grid {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
+        gap: 1.875rem;
+        align-items: center;
     }
     .card--cyan {
         grid-column: 1;
     }
     .cards-grid__middle {
         grid-column: 2;
+        display: grid;
+        gap: 1.875rem;
     }
     .card--blue {
         grid-column: 3;
