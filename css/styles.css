@@ -1,7 +1,136 @@
+:root {
+    /*--- Colors - HSL ---*/
+    --clr-red: hsl(0, 78%, 62%);
+    --clr-cyan: hsl(180, 62%, 55%);
+    --clr-orange: hsl(34, 97%, 64%);
+    --clr-blue: hsl(212, 86%, 64%);
+    --clr-dark-blue: hsl(234, 12%, 34%);
+    --clr-gray-blue: hsl(229, 6%, 66%);
+    --clr-very-light-gray: hsl(0, 0%, 98%);
+
+    /*--- Tipograpy ---*/
+    --ff-primary: 'Poppins', sans-serif;
+    --fs-body: 0.9375rem;
+}
+
+/*--- Reset and Base ---*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    background-color: var(--clr-very-light-gray);
+    color: var(--clr-gray-blue);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+/*--- Layout ---*/
+.container {
+    max-width: 1110px;
+    width: 100%;
+}
+.header {
+    text-align: center;
+    margin-bottom: 4.5rem;
+}
+.header__title {
+    color: var(--clr-dark-blue);
+    font-weight: 200;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.header__title--bold {
+    display: block;
+    font-weight: 600;
+}
+.header__description {
+    max-width: 520px;
+    margin: 0 auto;
+}
+/*--- Cards Grid ---*/
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+.cards-grid__middle {
+    display: grid;
+    gap: 1.5rem;
+}
+/*--- Individual cards ---*/
+.card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px -10px rgba(131, 166, 210, 0.5);
+    border-top: 4px solid;
+    display: flex;
+    flex-direction: column;
+}
+.card--cyan {
+    border-top-color: var(--clr-cyan);
+}
+.card--red {
+    border-top-color: var(--clr-red);
+}
+.card--orange {
+    border-top-color: var(--clr-orange);
+}
+.card--blue {
+    border-top-color: var(--clr-blue);
+}
+.card__title {
+    color: var(--clr-dark-blue);
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+}
+.card__text {
+    font-size: 0.8125rem;
+    margin-bottom: 2rem;
+}
+.card__icon {
+    align-self: flex-end;
+    width: 57px;
+    height: 57px;
+}
+/*--- Footer ---*/
+
 .attribution { 
-    font-size: 11px; 
+    margin-top: 3rem;
+    font-size: 9px; 
     text-align: center; 
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+    text-decoration: none;
+}
+
+/*--- Responsive Design - Desktop (900px+) ---*/
+@media (min-width: 900px) {
+    .header__title {
+        font-size: 2.25rem;
+    }
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card--cyan {
+        grid-column: 1;
+    }
+    .cards-grid__middle {
+        grid-column: 2;
+    }
+    .card--blue {
+        grid-column: 3;
+    }
+    .attribution {
+        font-size: 11px;
+    }
 }
